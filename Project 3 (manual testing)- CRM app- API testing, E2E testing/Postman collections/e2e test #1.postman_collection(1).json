@@ -1,0 +1,110 @@
+{
+	"info": {
+		"_postman_id": "2c551609-02e1-4e99-a27f-23d932af550e",
+		"name": "e2e test #1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36221666"
+	},
+	"item": [
+		{
+			"name": "Create a deal via API",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"company_name_text\": \"NEW DEAL Company676666\",\r\n  \"deal_value_estimation_number\": 607000,\r\n  \"description_text\": \"testing create new deal\",\r\n  \"funnel_custom_funnel1\":\"1678718042244x598870217126314000\",\r\n  \"lead_custom_lead\": \"1625049365252x916368577178632200\",\r\n\"logo_image\":\"//s3.amazonaws.com/appforest_uf/f1625049296722x512338398721930560/13C791FA-0198-4A81-B64B-E3257E0EC4CF_1_201_a.jpeg?fit=crop&q=75\",\r\n  \"name_text\": \"Testing Campaign\",\r\n  \"note_list_custom_note\": [\r\n    \"1627393624856x199214596987551740\"\r\n  ],\r\n  \"order_number\": 2,\r\n  \"stage_custom_stage\": \"1625047820303x899759834668320400\",\r\n  \"status_option_status\": \"Lost\",\r\n  \"visible_to_list_user\": [\r\n    \"1625047373081x778685405315052900\"\r\n  ]\r\n }\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/obj/deal",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"obj",
+						"deal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify updated deal value via API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/obj/deal?UniqueID=1625048701288x662432067036119000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"obj",
+						"deal"
+					],
+					"query": [
+						{
+							"key": "UniqueID",
+							"value": "1625048701288x662432067036119000"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "api_token",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "b30ca93d0a7ebe389e9326a22497bf38",
+				"type": "string"
+			},
+			{
+				"key": "in",
+				"value": "query",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://cerebrumhubcrmlite.bubbleapps.io/api/1.1",
+			"type": "string"
+		}
+	]
+}

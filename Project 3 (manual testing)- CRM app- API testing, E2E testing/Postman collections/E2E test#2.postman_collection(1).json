@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "491798e2-c146-4035-a80e-b0a409ab7f9b",
+		"name": "E2E test#2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36221666"
+	},
+	"item": [
+		{
+			"name": "Create a deal via API",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"assignee__user\": \"1625047362532x398219546419355650\",\r\n  \"name_text\": \"Hot Lead Deal\",\r\n   \"deal_value_estimation_number\": 2000, \r\n   \"funnel_custom_funnel1\": \"Lead acquisition\",\r\n    \"status_option_status\": \"In progress\"\r\n }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/obj/deal",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"obj",
+						"deal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"stage_custom_stage\": \"New request\" \r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/obj/deal?UniqueID=1625048701288x662432067036119000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"obj",
+						"deal"
+					],
+					"query": [
+						{
+							"key": "UniqueID",
+							"value": "1625048701288x662432067036119000"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "in",
+				"value": "query",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "API Key",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "b30ca93d0a7ebe389e9326a22497bf38",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://cerebrumhubcrmlite.bubbleapps.io/api/1.1",
+			"type": "string"
+		}
+	]
+}

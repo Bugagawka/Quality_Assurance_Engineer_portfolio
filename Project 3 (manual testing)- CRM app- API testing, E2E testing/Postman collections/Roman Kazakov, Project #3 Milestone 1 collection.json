@@ -1,0 +1,467 @@
+{
+	"info": {
+		"_postman_id": "3f8d6071-19e7-4d60-ac1e-006632e406a5",
+		"name": "CRM collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36221666"
+	},
+	"item": [
+		{
+			"name": "Leads API",
+			"item": [
+				{
+					"name": "Get the list of all leads",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/obj/lead?limit=50&cursor=0&sort_field=company_text&descending=true&constraints=[{ \"key\" : \"company_text\", \"constraint_type\" : \"equals\", \"value\" : \"Testin Enelin\"}]",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"obj",
+								"lead"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "50"
+								},
+								{
+									"key": "cursor",
+									"value": "0"
+								},
+								{
+									"key": "sort_field",
+									"value": "company_text"
+								},
+								{
+									"key": "descending",
+									"value": "true"
+								},
+								{
+									"key": "constraints",
+									"value": "[{ \"key\" : \"company_text\", \"constraint_type\" : \"equals\", \"value\" : \"Testin Enelin\"}]"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Lead by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/obj/lead/:UniqueID",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"obj",
+								"lead",
+								":UniqueID"
+							],
+							"variable": [
+								{
+									"key": "UniqueID",
+									"value": "1731423087915x564833841698853000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create  a new Lead",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"company_text\": \"Bugagawka999\",\r\n  \"email_text\": \"gfhgjfgjhhgfjghfjgfj@gfjgfjgfjgfjgfjghfgjfgfjgfjgjghdcjdgdfgjhdfjghfghjfjghfjhgfjhgfjgfjhgfjgjhgfjhgfjhgf.com\",\r\n  \"full_name_text\": \"Bugaga666\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/obj/lead",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"obj",
+								"lead"
+							],
+							"query": [
+								{
+									"key": "email_text",
+									"value": "gfhgjfgjhhgfjghfjgfj@gfjgfjgfjgfjgfjghfgjfgfjgfjgjghdcjdgdfgjhdfjghfghjfjghfjhgfjhgfjgfjhgfjgjhgfjhgfjhgf.com",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create  a new Lead - company name",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"company_text\": \"Bugagawka34\",\r\n  \"email_text\": \"buga@buga.com\",\r\n  \"full_name_text\": \"Bugaga666\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/obj/lead",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"obj",
+								"lead"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create  a new Lead - email validation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"company_text\": \"Bugagawka34\",\r\n  \"email_text\": \"buga@buga.com\",\r\n  \"full_name_text\": \"Bugaga666\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/obj/lead",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"obj",
+								"lead"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify lead data",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/obj/lead/:UniqueID",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"obj",
+								"lead",
+								":UniqueID"
+							],
+							"variable": [
+								{
+									"key": "UniqueID",
+									"value": "1724187713226x622515274314759300"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Replace lead data",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"company_text\": \"2\",\r\n  \"email_text\": \"2\",\r\n  \"full_name_text\": \"2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/obj/lead/:UniqueID",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"obj",
+								"lead",
+								":UniqueID"
+							],
+							"variable": [
+								{
+									"key": "UniqueID",
+									"value": "1724187713226x622515274314759300"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete lead data",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"company_text\": \"2\",\r\n  \"email_text\": \"2\",\r\n  \"full_name_text\": \"2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/obj/lead/:UniqueID",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"obj",
+								"lead",
+								":UniqueID"
+							],
+							"variable": [
+								{
+									"key": "UniqueID",
+									"value": "1732446499463x664183847208417200"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Funnels API",
+			"item": [
+				{
+					"name": "Get the list of all funnels",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/obj/funnel?cursor=2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"obj",
+								"funnel"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "cursor",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get funnel data by unique Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/obj/funnel/:UniqueID",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"obj",
+								"funnel",
+								":UniqueID"
+							],
+							"variable": [
+								{
+									"key": "UniqueID",
+									"value": "1678718042244x598870217126314000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a new funnel",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"members_list_user\": [\r\n    \"1625051658962x581289845978797800\",\r\n    \"1625047362532x398219546419355650\",\r\n    \"1625047373081x778685405315052900\",\r\n     \"1625125825767x718816571317085800\"\r\n  ],\r\n  \"name_text\": \"string\",\r\n  \"stage_list_custom_stage\": [\r\n    \"string1\",\r\n    \"string2\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/obj/funnel",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"obj",
+								"funnel"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Magicuser API(New invites)",
+			"item": [
+				{
+					"name": "Get the list of all magicusers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/obj/magicuser?limit=100&cursor=0&sort_field=email_text&descending=false&constraints=[{\"key\": \"email_text\", \"constraint_type\": \"equals\", \"value\": \"mihai.rev@gmail.com\" }]",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"obj",
+								"magicuser"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "100"
+								},
+								{
+									"key": "cursor",
+									"value": "0"
+								},
+								{
+									"key": "sort_field",
+									"value": "email_text"
+								},
+								{
+									"key": "descending",
+									"value": "false"
+								},
+								{
+									"key": "constraints",
+									"value": "[{\"key\": \"email_text\", \"constraint_type\": \"equals\", \"value\": \"mihai.rev@gmail.com\" }]"
+								},
+								{
+									"key": null,
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a new magicuser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/obj/magicuser",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"obj",
+								"magicuser"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{authToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "authToken",
+			"value": "AUTH_TOKEN"
+		},
+		{
+			"key": "baseUrl",
+			"value": "https://cerebrumhubcrmlite.bubbleapps.io/api/1.1",
+			"type": "string"
+		}
+	]
+}
